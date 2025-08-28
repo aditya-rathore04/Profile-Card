@@ -26,98 +26,105 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 500,
-              // maxHeight: 300,
-            ),
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(40),
-            ),
-            elevation: 4,
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // Image with drop shadow
-                  Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 12,
-                          spreadRadius: 2,
-                          offset: Offset(0, 6),
-                        )
-                      ],
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 460,
-                          maxHeight: 460,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF00B4DB),
+              Color(0xFF0083B0),
+            ],
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 500),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                elevation: 4,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Image with drop shadow
+                      Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 12,
+                              spreadRadius: 2,
+                              offset: Offset(0, 6),
+                            )
+                          ],
+                          borderRadius: BorderRadius.circular(20),
                         ),
-                        child: AspectRatio(
-                          aspectRatio: 1, // Width: Height = 1:1
-                          child: Image.asset(
-                            "assets/pictures/billie.jpg",
-                            fit: BoxFit.cover,
-                          ), 
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
+                              maxWidth: 460,
+                              maxHeight: 460,
+                            ),
+                            child: AspectRatio(
+                              aspectRatio: 1, // Width: Height = 1:1
+                              child: Image.asset(
+                                "assets/pictures/billie.jpg",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
 
-                  SizedBox(height: 20),
+                      SizedBox(height: 20),
 
-                  // Name
-                  Text(
-                    "Billie Eilish",
-                    style: TextStyle(
-                      fontFamily: "DreamAvenue",
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                      // Name
+                      Text(
+                        "Billie Eilish",
+                        style: TextStyle(
+                          fontFamily: "DreamAvenue",
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
 
-                  SizedBox(height: 8),
+                      SizedBox(height: 8),
 
-                  // Subtitle
-                  Text(
-                    "American singer-songwriter\nand musician",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontSize: 14,
-                      color: Colors.black87,
-                    ),
-                  ),
+                      // Subtitle
+                      Text(
+                        "American singer-songwriter\nand musician",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: 14,
+                          color: Colors.black87,
+                        ),
+                      ),
 
-                  SizedBox(height: 20),
+                      SizedBox(height: 20),
 
-                  // Social Icons Row
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SvgPicture.asset("assets/icons/instagram-1-svgrepo-com.svg", height: 30),
-                      SvgPicture.asset("assets/icons/tiktok-svgrepo-com.svg", height: 30),
-                      SvgPicture.asset("assets/icons/twitter-x.svg", height: 30),
-                      SvgPicture.asset("assets/icons/facebook-1-svgrepo-com.svg", height: 30),
+                      // Social Icons Row
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SvgPicture.asset("assets/icons/instagram-1-svgrepo-com.svg", height: 30),
+                          SvgPicture.asset("assets/icons/tiktok-svgrepo-com.svg", height: 30),
+                          SvgPicture.asset("assets/icons/twitter-x.svg", height: 30),
+                          SvgPicture.asset("assets/icons/facebook-1-svgrepo-com.svg", height: 30),
+                        ],
+                      )
                     ],
-                  )
-                ],
+                  ),
+                ),
               ),
             ),
-          ),
           ),
         ),
       ),
