@@ -63,8 +63,8 @@ class ProfileCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       child: ConstrainedBox(
                         constraints: const BoxConstraints(
-                          maxWidth: 300,
-                          maxHeight: 300,
+                          maxWidth: 460,
+                          maxHeight: 460,
                         ),
                         child: AspectRatio(
                           aspectRatio: 1, // Width: Height = 1:1
